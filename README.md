@@ -1,5 +1,6 @@
 # phd-image-numerator
 <img src="https://github.com/wilddesign/phd-image-enumerator/blob/main/logo90.png"/>
+
 ## Auto image numbering for scientific papers.
 
 All you need is a folder with the structure images saved as .tif files, from 1.tif, 2.tif, 3.tif,..... N.tif. You copy the program file, run it, and you get 1.svg, 2.svg, 3.svg,..., N.svg vector editable graphics. Each of these has its own assigned number 1, 2, 3, ..., N written above the molecule.
@@ -19,8 +20,6 @@ nodejs phd-set-tif-apart.js 2
 and the folder content is as follows:
 1.tif, 2.tif, 4.tif.
 With empty space for 3.tif created.
-
-
 
 
 How to install?
