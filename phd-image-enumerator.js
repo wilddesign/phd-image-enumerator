@@ -5,14 +5,14 @@ const potrace = require('potrace'),
     path = require('path');
 
     //count files of .tif type and rename them so that their names form a sorted series without holes
-    let howManyTifs = 0;
+    let maxTif = 0;
     fs.readdir(__dirname, (err, files) => {
     if (err)
       console.log(err);
     else {
       files.forEach(file => {
         if (path.extname(file) == ".tif")
-          howManyTifs++;
+          maxTif = (parseInt(file.slice(0, -4)) > maxTif)? parseInt(file.slice(0, -4)) : maxTif;
       });
 
       const config = {
@@ -22,7 +22,7 @@ const potrace = require('potrace'),
         fontFamily: "Arial, Helvetica, sans-serif"
       }
 
-      let iMax = howManyTifs;
+      let iMax = maxTif;
       let empties = 0;
       for(let i=1; i<=iMax; i++){
         // log the progress to the user

@@ -20,7 +20,6 @@ let foundTifs = [];
     console.log(howManyTifs+' tif files found.');
     if(howManyTifs && process.argv[2] > 0){
       foundTifs.forEach((file, index) => {
-        console.log(file);
 
         try {
           if (fs.existsSync('./'+file+'.tif') && file>process.argv[2]) {
