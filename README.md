@@ -17,7 +17,8 @@ You run:
 nodejs phd-set-tif-apart.js 2
 ```
 and the folder content is as follows:
-1.tif, 7.tif, 8.tif.
+1.tif, 2.tif, 4.tif.
+With empty space for 3.tif created.
 
 
 
