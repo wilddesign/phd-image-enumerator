@@ -14,7 +14,7 @@ const potrace = require('potrace'),
       });
       const config = {
         x: 0,
-        y: 40,
+        y: 0,
         fontSize: 50,
         fontFamily: "Arial, Helvetica, sans-serif"
       }
@@ -53,11 +53,21 @@ function getTifAndMakeSvg(path, conf, index, empties) {
     if (err) throw err;
     // append number to the svg file
     let txt = generateStyledIndex (conf, index, empties);
+
+    let enlargedSvg = getHigher(svg);
     // find </svg> in the file and replace with txt
-    let newSvg = svg.replace("</svg>", txt);
+    let newSvg = enlargedSvg.replace("</svg>", txt);
     let destPath = path.replace(".tif", ".svg");'./'+(index-empties)+'.svg';
     fs.writeFileSync(destPath, newSvg);
   })
+}
+
+function getHigher(svg){
+  // make the svg a bit higher fo fit the text into it
+  let heightAttr = svg.match(/height=\"[0-9]+/);
+  //parse heightAttr
+  newHeight = parseInt(heightAttr[0].replace("height=\"","")) + 70;
+  return svg.replace(/height=\"[0-9]+/, "height=\"" + newHeight);
 }
 
 function findMiddles(path, conf, index, empties){
