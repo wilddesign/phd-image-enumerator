@@ -14,7 +14,7 @@ const potrace = require('potrace'),
       });
       const config = {
         x: 0,
-        y: 0,
+        y: -10,
         fontSize: 50,
         fontFamily: "Arial, Helvetica, sans-serif"
       }
@@ -66,7 +66,7 @@ function getHigher(svg){
   // make the svg a bit higher fo fit the text into it
   let heightAttr = svg.match(/height=\"[0-9]+/);
   //parse heightAttr
-  newHeight = parseInt(heightAttr[0].replace("height=\"","")) + 70;
+  newHeight = parseInt(heightAttr[0].replace("height=\"","")) + 90;
   return svg.replace(/height=\"[0-9]+/, "height=\"" + newHeight);
 }
 
