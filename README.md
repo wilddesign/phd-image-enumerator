@@ -1,5 +1,5 @@
 # phd-image-numerator
-[My image](wilddesign.github.com/phd-image-enumerator/logo90.png)
+<img src="wilddesign.github.com/phd-image-enumerator/logo90.png"/>)
 Auto image numbering for scientific papers.
 
 All you need is a folder with the structure images saved as .tif files, from 1.tif, 2.tif, 3.tif,..... N.tif. You copy the program file, run it, and you get 1.svg, 2.svg, 3.svg,..., N.svg vector editable graphics. Each of these has its own assigned number 1, 2, 3, ..., N written above the molecule.
