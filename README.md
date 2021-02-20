@@ -10,7 +10,7 @@ Adding structures between 1.tif and 2.tif is possible. Just run:
 ```
 nodejs phd-set-tif-apart.js x
 ```
-where x is a number, specifying where a space for another .tif will be creates. So:
+where x is a number, specifying where a space for another .tif will be created. So:
 there are files 1.tif, 2.tif, 3.tif.
 You run:
 ```
