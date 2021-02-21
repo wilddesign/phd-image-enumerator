@@ -33,10 +33,10 @@ svg += '<text x=\"'+configs.x+'\" y=\"'+(configs.y+70)+'\" font-size=\"'+configs
 
 svg += '</svg>'
 
-fs.writeFile('./'+'>'+ process.argv[5], svg, (err) => {
+fs.writeFile('./'+'ar_'+ process.argv[5], svg, (err) => {
     // throws an error, you could also catch it here
     if (err) throw err;
 
     // success case, the file was saved
-    console.log('>'+ process.argv[5]+' written!');
+    console.log('ar_'+ process.argv[5]+' written!');
 });

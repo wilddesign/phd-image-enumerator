@@ -43,7 +43,7 @@ nodejs phd-image-enumerator.js
 ```
 
 # phd-reaction-arrow-generator
-<img src="https://github.com/wilddesign/phd-image-enumerator/blob/main/ar_result_filename.svg"/>
+<img src="https://github.com/wilddesign/phd-image-enumerator/blob/main/ar_result_filename.png"/>
 
 ## Auto reaction arrow SVG generation for scientific papers.
 
