@@ -19,7 +19,7 @@ nodejs phd-set-tif-apart.js 1
 ```
 and the folder content is as follows:
 1.tif, 3.tif, 4.tif.
-With empty space for 3.tif created.
+With empty space for 2.tif created.
 
 
 How to install?
