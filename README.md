@@ -41,3 +41,14 @@ Then just save the .js file in a directory containing 1.tif, 2.tif etc and run:
 ```
 nodejs phd-image-enumerator.js
 ```
+
+# phd-reaction-arrow-generator
+<img src="https://github.com/wilddesign/phd-image-enumerator/blob/main/ar_result_filename.png"/>
+
+## Auto reaction arrow SVG generation for scientific papers.
+
+Run:
+```
+nodejs phd-reaction-arrow.js "text_above_arrow" 450 "text_under_arrow" result_filename.svg
+```
+Arrow length set at 450 px. ar_result_filename.svg file is generated.
