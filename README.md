@@ -15,10 +15,10 @@ where x is a number, specifying where a space for another .tif will be created. 
 there are files 1.tif, 2.tif, 3.tif.
 You run:
 ```
-nodejs phd-set-tif-apart.js 2
+nodejs phd-set-tif-apart.js 1
 ```
 and the folder content is as follows:
-1.tif, 2.tif, 4.tif.
+1.tif, 3.tif, 4.tif.
 With empty space for 3.tif created.
 
 
