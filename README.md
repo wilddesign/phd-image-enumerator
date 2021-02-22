@@ -63,7 +63,14 @@ Once the numbered structures and a reaction arrow are generated, it's time to co
 2. Merge them into one with appropriately positoned elements.
 3. Transform it back to .svg for further edition.
 
-Run:
+First install:
+
+```
+npm install merge-images
+npm install image-size
+npm install canvas
+```
+Then run:
 ```
 nodejs phd-topngs.js 1 arrow1 2
 ```
