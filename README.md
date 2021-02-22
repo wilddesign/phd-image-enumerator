@@ -85,7 +85,7 @@ Arrow head tends to be lost during the transformation, which is a known issue an
 
 # File removal tools
 
- If you need to delete all old generated .svg structures, run:
+ If you need to delete all old generated numbered .svg structures, run:
  ```
  nodejs phd-delete-generated-svgs.js
  ```
