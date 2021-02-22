@@ -52,3 +52,40 @@ Run:
 nodejs phd-reaction-arrow.js "text_above_arrow" 450 "text_under_arrow" result_filename.svg
 ```
 Arrow length set at 450 px. ar_result_filename.svg file is generated.
+
+# phd-reaction-scheme-generator
+<img src="https://github.com/wilddesign/phd-image-enumerator/blob/main/sgen_res.png"/>
+
+## Auto reaction scheme SVG generation for scientific papers.
+
+Once the numbered structures and a reaction arrow are generated, it's time to combine them.
+1. Transform the chosen .svg files to .png files.
+2. Merge them into one with appropriately positoned elements.
+3. Transform it back to .svg for further edition.
+
+Run:
+```
+nodejs phd-topngs.js 1 arrow1 2
+```
+It will transform 1.svg, arrow1.svg and 2.svg into corresponding .png files.
+Then:
+```
+nodejs phd-mergepngs.js 1 arrow1 2 res
+```
+This one will merge appropriately positioned 1.png, arrow1.png and 2.png into res.png file.
+And finally:
+```
+nodejs phd-parse-png-to-svg.js res
+```
+This one will transform res.png to sgen_res.svg for further edition.
+
+
+Arrow head tends to be lost during the transformation, which is a known issue and its correction is under way. Anyways, the sgen_ file is an svg file that can be edited in Inkscape or a similar program.
+
+
+# File removal tools
+
+ If you need to delete all old generated numbered .svg structures, run:
+ ```
+ nodejs phd-delete-generated-svgs.js
+ ```
