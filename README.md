@@ -84,7 +84,7 @@ The sgen_ file is an svg file that can be edited in Inkscape or a similar progra
 
 # File removal tools
 
- If you need to delete all old generated .svg structures, run:
+ If you need to delete all old generated numbered .svg structures, run:
  ```
  nodejs phd-delete-generated-svgs.js
  ```
