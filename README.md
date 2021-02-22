@@ -54,7 +54,7 @@ nodejs phd-reaction-arrow.js "text_above_arrow" 450 "text_under_arrow" result_fi
 Arrow length set at 450 px. ar_result_filename.svg file is generated.
 
 # phd-reaction-scheme-generator
-<img src="https://github.com/wilddesign/phd-image-enumerator/blob/main/sgen_res.png"/>
+<img src="https://github.com/wilddesign/phd-image-enumerator/blob/main/res.png"/>
 
 ## Auto reaction scheme SVG generation for scientific papers.
 
