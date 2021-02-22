@@ -11,7 +11,7 @@ const configs = {
 const fs = require('fs')
 
 let svg = ""
-svg += '<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">\n'
+svg += '<svg width=\"'+process.argv[3]+'\" height="140" xmlns="http://www.w3.org/2000/svg">\n'
 
 // add text above arrow
 svg += '<text x=\"'+configs.x+'\" y=\"'+configs.y+'\" font-size=\"'+configs.fontSize+'\" font-family=\"'+configs.fontFamily+'\">'+(process.argv[2])+'</text>';
@@ -22,7 +22,7 @@ svg += '<defs>\
       <polygon points=\"0 0, 10 3.5, 0 7\" />\
     </marker>\
   </defs>\
-  <line x1=\"0\" y1=\"70\" x2=\"'+process.argv[3]+'\" y2=\"70\" stroke=\"#000\"\
+  <line x1=\"0\" y1=\"70\" x2=\"'+(process.argv[3]-50)+'\" y2=\"70\" stroke=\"#000\"\
   stroke-width=\"4\" marker-end=\"url(#arrowhead)\" />';
 // add text below the arrow
 
