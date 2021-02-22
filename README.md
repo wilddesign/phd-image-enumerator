@@ -86,8 +86,7 @@ nodejs phd-parse-png-to-svg.js res
 ```
 This one will transform res.png to sgen_res.svg for further edition.
 
-
-Arrow head tends to be lost during the transformation, which is a known issue and its correction is under way. Anyways, the sgen_ file is an svg file that can be edited in Inkscape or a similar program.
+The sgen_ file is an svg file that can be edited in Inkscape or a similar program.
 
 
 # File removal tools
