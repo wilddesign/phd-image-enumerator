@@ -34,17 +34,12 @@ const potrace = require('potrace'),
           if (fs.existsSync(sourcePath)) {
             getTifAndMakeSvg(sourcePath, config, i, empties);
 
-            //look for middles
-          //  i += findMiddles(sourcePath, config, i, empties);
-            //console.log(i);
           } else {
-            //iMax++; //if the file not found, we must do the main loop longer
             empties++; //
-
-          //  i += findMiddles(sourcePath, config, i, empties);
           }
         } catch (e) {
           //if neither file nor a middle is found, it is still ok
+          console.log(e);
         }
       }
     }
@@ -74,20 +69,6 @@ function getHigher(svg){
   return svg.replace(/height=\"[0-9]+/, "height=\"" + newHeight);
 }
 
-/*function findMiddles(path, conf, index, empties){
-  let middles = 0;//console.log('./'+index+'.'+(middles+1)+'.tif');
-  do {
-    if(fs.existsSync('./'+index+'.'+(middles+1)+'.tif')) {//console.log('found./'+index+'.'+(middles+1)+'.tif');
-    //console.log('./'+index+'.'+(middles+1)+'.tif', index+middles+1, empties);
-  //  console.log('argument path jest: ', './'+index+'.'+(middles+1)+'.tif');
-  //  let newPath = ;
-    console.log('newPath ','./'+index+'.'+(middles+1)+'.tif');
-        getTifAndMakeSvg('./'+index+'.'+(middles+1)+'.tif', config, index+middles+1, empties);
-        middles++;
-    }
-  } while (fs.existsSync('./'+index+'.'+(middles+1)+'.tif'));
-  return middles;
-}*/
 
 function generateStyledIndex (configs, number, empties) {
   return '<text x=\"'+configs.x+'\" y=\"'+configs.y+'\" font-size=\"'+configs.fontSize+'\" font-family=\"'+configs.fontFamily+'\">'+(number-empties)+'</text></svg>';

@@ -8,14 +8,14 @@ const configs = {
   fontFamily: "Arial, Helvetica, sans-serif"
 }
 
-const fs = require('fs')
+const fs = require('fs');
 
 let svg = ""
 svg += '<svg width=\"'+process.argv[3]+'\" height="140" xmlns="http://www.w3.org/2000/svg">\n'
 
 // add text above arrow
 svg += '<text x=\"'+configs.x+'\" y=\"'+configs.y+'\" font-size=\"'+configs.fontSize+'\" font-family=\"'+configs.fontFamily+'\">'+(process.argv[2])+'</text>';
-// add the arrow
+// add the default arrow
 svg += '<defs>\
 <marker id=\"arrowhead\" markerWidth=\"10\" markerHeight=\"7\"\
     refX=\"0\" refY=\"3.5\" orient=\"auto\">\
@@ -31,7 +31,7 @@ svg += '<text x=\"'+configs.x+'\" y=\"'+(configs.y+70)+'\" font-size=\"'+configs
 
 svg += '</svg>'
 
-fs.writeFile('./'+'ar_'+ process.argv[5], svg, (err) => {
+fs.writeFileSync('./'+'ar_'+ process.argv[5], svg, (err) => {
     // throws an error, you could also catch it here
     if (err) throw err;
 

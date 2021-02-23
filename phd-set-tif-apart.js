@@ -30,7 +30,6 @@ let foundTifs = [];
         } catch(err) {
           console.error(err)
         }
-
       });
     }
   }
