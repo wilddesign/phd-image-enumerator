@@ -21,22 +21,13 @@ and the folder content is as follows:
 1.tif, 3.tif, 4.tif.
 With empty space for 2.tif created.
 
-
 How to install?
-It requires:
+Just run phd-install.sh with following commands:
+```
+chmod +x phd-install.sh
+./phd-install.sh
+```
 
-## Node.js + Potrace package
-
-Ubuntu install: run following commands:
-```
-sudo apt install nodejs
-```
-```
-sudo apt install npm
-```
-```
-npm install potrace
-```
 Then just save the .js file in a directory containing 1.tif, 2.tif etc and run:
 ```
 nodejs phd-image-enumerator.js
@@ -63,14 +54,7 @@ Once the numbered structures and a reaction arrow are generated, it's time to co
 2. Merge them into one with appropriately positoned elements.
 3. Transform it back to .svg for further edition.
 
-First install:
-
-```
-npm install merge-images
-npm install image-size
-npm install canvas
-```
-Then run:
+Run:
 ```
 nodejs phd-topngs.js 1 arrow1 2
 ```
