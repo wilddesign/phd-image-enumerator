@@ -1,14 +1,5 @@
 'use strict';
 
-/*
-take svg files, make tif or png with them, merge them, revert to svg and remove generated source tif files
-use merge-images and image-size from npm for positioning
-algorithm of positioning is as follows:
-take the heighth of the highest png, calculate its half
-then the arrow is at the half-half oth the arrow's height
-then the position of the product is calculated the same way
-*/
-
 const sharp = require("sharp");
 
 if (process.argv.length<5){

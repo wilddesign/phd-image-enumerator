@@ -21,13 +21,6 @@ and the folder content is as follows:
 1.tif, 3.tif, 4.tif.
 With empty space for 2.tif created.
 
-How to install?
-Just run phd-install.sh with following commands:
-```
-chmod +x phd-install.sh
-./phd-install.sh
-```
-
 Then just save the .js file in a directory containing 1.tif, 2.tif etc and run:
 ```
 nodejs phd-image-enumerator.js
@@ -78,4 +71,12 @@ The sgen_ file is an svg file that can be edited in Inkscape or a similar progra
  If you need to delete all old generated numbered .svg structures, run:
  ```
  nodejs phd-delete-generated-svgs.js
+ ```
+
+ # How to install?
+ 
+ Just run phd-install.sh with following commands:
+ ```
+ chmod +x phd-install.sh
+ ./phd-install.sh
  ```

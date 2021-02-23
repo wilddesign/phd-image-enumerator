@@ -1,12 +1,6 @@
 'use strict';
 
-/*
-use merge-images and image-size from npm for positioning
-algorithm of positioning is as follows:
-take the heighth of the highest png, calculate its half
-then the arrow is at the half-half oth the arrow's height
-then the position of the product is calculated the same way
-*/
+
 const is = require('image-size');
 const mi = require('merge-images');
 const { Canvas, Image } = require('canvas');
