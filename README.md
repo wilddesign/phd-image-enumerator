@@ -1,4 +1,4 @@
-# phd-image-numerator
+# phd-image-enumerator
 <img src="https://github.com/wilddesign/phd-image-enumerator/blob/main/logo90.png"/>
 
 ## Auto image numbering for scientific papers.
