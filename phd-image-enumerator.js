@@ -2,7 +2,8 @@
 
 const potrace = require('potrace'),
     fs = require('fs'),
-    path = require('path');
+    path = require('path'),
+    is = require('image-size');
 
     //count files of .tif type and rename them so that their names form a sorted series without holes
     let maxTif = 0;
@@ -17,7 +18,7 @@ const potrace = require('potrace'),
 
       const config = {
         x: 0,
-        y: -10,
+        y: 50,
         fontSize: 50,
         fontFamily: "Arial, Helvetica, sans-serif"
       }
@@ -32,7 +33,9 @@ const potrace = require('potrace'),
         let sourcePath = './'+i+'.tif';
         try {
           if (fs.existsSync(sourcePath)) {
-            getTifAndMakeSvg(sourcePath, config, i, empties);
+            //take image dimensions
+            let imgSize = is(sourcePath);
+            getTifAndMakeSvg(sourcePath, config, i, empties, imgSize.width, imgSize.height);
 
           } else {
             empties++; //
@@ -47,13 +50,13 @@ const potrace = require('potrace'),
 
 
 
-function getTifAndMakeSvg(path, conf, index, empties) {
+function getTifAndMakeSvg(path, conf, index, empties, imgWidth, imgHeight) {
   potrace.posterize(path, {threshold: 180, steps: 4}, function(err, svg) {
     if (err) throw err;
     // append number to the svg file
-    let txt = generateStyledIndex (conf, index, empties);
+    let txt = generateStyledIndex (conf, index, empties, imgWidth, imgHeight);
 
-    let enlargedSvg = getHigher(svg);
+    let enlargedSvg = getBiggerViewBox(svg, imgWidth, imgHeight, conf);
     // find </svg> in the file and replace with txt
     let newSvg = enlargedSvg.replace("</svg>", txt);
     let destPath = path.replace(".tif", ".svg");
@@ -61,15 +64,14 @@ function getTifAndMakeSvg(path, conf, index, empties) {
   })
 }
 
-function getHigher(svg){
+function getBiggerViewBox(svg, width, height, config){
   // make the svg a bit higher fo fit the text into it
-  let heightAttr = svg.match(/height=\"[0-9]+/);
-  //parse heightAttr
-  let newHeight = parseInt(heightAttr[0].replace("height=\"","")) + 90;
-  return svg.replace(/height=\"[0-9]+/, "height=\"" + newHeight);
+  let newHeight = height+config.y;
+  let newViewBox = "viewBox=\"0 0 "+width +" "+ newHeight+"\"";
+  return svg.replace(/viewBox=\"0 0 [0-9]+ [0-9]+\"/, newViewBox);
 }
 
 
-function generateStyledIndex (configs, number, empties) {
-  return '<text x=\"'+configs.x+'\" y=\"'+configs.y+'\" font-size=\"'+configs.fontSize+'\" font-family=\"'+configs.fontFamily+'\">'+(number-empties)+'</text></svg>';
+function generateStyledIndex (configs, number, empties, imgWidth, imgHeight) {
+  return '<text x=\"'+((imgWidth/2)+configs.x-(configs.fontSize/2))+'\" y=\"'+(imgHeight+configs.y)+'\" font-size=\"'+configs.fontSize+'\" font-family=\"'+configs.fontFamily+'\">'+(number-empties)+'</text></svg>';
 }
