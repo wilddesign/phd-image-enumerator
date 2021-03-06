@@ -74,8 +74,7 @@ The sgen_ file is an svg file that can be edited in Inkscape or a similar progra
  ```
 
  # How to install?
- 
- Just run phd-install.sh with following commands:
+ Download the .zip with code, unpack it and then just run phd-install.sh with following commands:
  ```
  chmod +x phd-install.sh
  ./phd-install.sh
